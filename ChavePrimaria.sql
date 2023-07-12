@@ -1,7 +1,6 @@
 USE [Curso]
 
 DROP TABLE [Aluno]
-
 CREATE TABLE [Aluno] (
     [Id] INT NOT NULL,
     [Nome] NVARCHAR(80) NOT NULL,
@@ -19,9 +18,8 @@ CREATE INDEX [IX_Aluno_Email] ON [Aluno]([Email])
 DROP INDEX [IX_Aluno_Email] ON [Aluno]
 
 DROP TABLE [Curso]
-
 CREATE TABLE [Curso] (
-    [Id] INT NOT NULL,
+    [Id] INT NOT NULL IDENTITY(1, 1), /* Identity Icrementa 1 pra 1*/
     [Nome] NVARCHAR(80) NOT NULL,
     [CategoriaId] INT NOT NULL,
 
@@ -38,10 +36,8 @@ CREATE TABLE [Categoria] (
     CONSTRAINT [PK_Categoria] PRIMARY KEY([Id])
 )
 
-
  /*Associativa*/
 DROP TABLE [ProgressoCurso]
-
 CREATE TABLE [ProgressoCurso] (
     [AlunoId] INT NOT NULL,
     [CursoId] INT NOT NULL,

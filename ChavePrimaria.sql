@@ -14,7 +14,12 @@ CREATE TABLE [Aluno] (
 )
 GO
 
-/*DROP TABLE [Curso] */
+/*Deixa o insert mais lento, poréma ajuda na consulta de uma tabela*/
+CREATE INDEX [IX_Aluno_Email] ON [Aluno]([Email])
+DROP INDEX [IX_Aluno_Email] ON [Aluno]
+
+DROP TABLE [Curso]
+
 CREATE TABLE [Curso] (
     [Id] INT NOT NULL,
     [Nome] NVARCHAR(80) NOT NULL,
